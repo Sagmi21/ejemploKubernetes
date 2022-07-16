@@ -1,0 +1,314 @@
+2021-01-20 11:01:24.714 -06:00 [Error] RegisterAsync Failed, request was made to http://localhost:8761/eureka/apps/USERSERVICE, retry: 0
+System.Net.Http.HttpRequestException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ ---> System.Net.Sockets.SocketException (10061): No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean allowHttp2, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DecompressionHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.RegisterAsyncInternal(InstanceInfo info)
+2021-01-20 11:01:24.827 -06:00 [Error] Register Failed
+Steeltoe.Discovery.Eureka.Transport.EurekaTransportException: Cannot execute request on any known server
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.GetServiceUrl(IList`1 candidateServiceUrls, Int32& indx)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.RegisterAsyncInternal(InstanceInfo info)
+   at Steeltoe.Discovery.Eureka.DiscoveryClient.RegisterAsync()
+2021-01-20 11:01:24.828 -06:00 [Information] Initial Registration failed.
+2021-01-20 11:01:24.828 -06:00 [Information] Starting HeartBeat
+2021-01-20 11:01:28.897 -06:00 [Error] DoGetApplicationsAsync Failed, request was made to http://localhost:8761/eureka/apps/
+System.Net.Http.HttpRequestException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ ---> System.Net.Sockets.SocketException (10061): No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean allowHttp2, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DecompressionHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.DoGetApplicationsAsync(String path, ISet`1 regions)
+2021-01-20 11:01:28.901 -06:00 [Error] FetchRegistry Failed for Eureka service urls: "http://localhost:8761/eureka/"
+Steeltoe.Discovery.Eureka.Transport.EurekaTransportException: Cannot execute request on any known server
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.GetServiceUrl(IList`1 candidateServiceUrls, Int32& indx)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.DoGetApplicationsAsync(String path, ISet`1 regions)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.GetApplicationsAsync(ISet`1 regions)
+   at Steeltoe.Discovery.Eureka.DiscoveryClient.FetchFullRegistryAsync()
+   at Steeltoe.Discovery.Eureka.DiscoveryClient.FetchRegistryAsync(Boolean fullUpdate)
+2021-01-20 11:01:29.109 -06:00 [Information] User profile is available. Using '"C:\Users\hmeraz\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-01-20 11:01:41.853 -06:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/index.html  
+2021-01-20 11:01:41.943 -06:00 [Information] Request finished in 94.0691ms 200 text/html;charset=utf-8
+2021-01-20 11:01:42.834 -06:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2021-01-20 11:01:42.932 -06:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/favicon-32x32.png  
+2021-01-20 11:01:42.955 -06:00 [Information] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"'
+2021-01-20 11:01:42.956 -06:00 [Information] Request finished in 23.3281ms 200 image/png
+2021-01-20 11:01:43.039 -06:00 [Information] Request finished in 205.6412ms 200 application/json;charset=utf-8
+2021-01-20 11:01:48.719 -06:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/index.html  
+2021-01-20 11:01:48.728 -06:00 [Information] Request finished in 9.9828ms 200 text/html;charset=utf-8
+2021-01-20 11:01:48.954 -06:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2021-01-20 11:01:48.971 -06:00 [Information] Request finished in 18.5938ms 200 application/json;charset=utf-8
+2021-01-20 11:01:58.901 -06:00 [Error] SendHeartBeatAsync Failed, request was made to http://localhost:8761/eureka/apps/USERSERVICE/userService?status=UP&lastDirtyTimestamp=1611162080329
+System.Net.Http.HttpRequestException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ ---> System.Net.Sockets.SocketException (10061): No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean allowHttp2, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DecompressionHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.SendHeartBeatAsyncInternal(String appName, String id, InstanceInfo info, InstanceStatus overriddenStatus)
+2021-01-20 11:01:58.904 -06:00 [Error] Renew Failed
+Steeltoe.Discovery.Eureka.Transport.EurekaTransportException: Cannot execute request on any known server
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.GetServiceUrl(IList`1 candidateServiceUrls, Int32& indx)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.SendHeartBeatAsyncInternal(String appName, String id, InstanceInfo info, InstanceStatus overriddenStatus)
+   at Steeltoe.Discovery.Eureka.DiscoveryClient.RenewAsync()
+2021-01-20 11:01:58.905 -06:00 [Error] HeartBeat failed
+2021-01-20 11:02:01.475 -06:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/ping  
+2021-01-20 11:02:01.542 -06:00 [Information] Executing endpoint '"Axity.Project.ServiceName.Api.Controllers.UsersController.Ping (Axity.Project.ServiceName.Api)"'
+2021-01-20 11:02:01.648 -06:00 [Information] Route matched with "{action = \"Ping\", controller = \"Users\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Ping()" on controller "Axity.Project.ServiceName.Api.Controllers.UsersController" ("Axity.Project.ServiceName.Api").
+2021-01-20 11:02:01.928 -06:00 [Information] OnActionExecuting Controller: Users Action:Ping
+2021-01-20 11:02:01.929 -06:00 [Information] OnActionExecuted Controller: Users Action:Ping
+2021-01-20 11:02:01.932 -06:00 [Information] OnResultExecuting Controller: Users Action:Ping
+2021-01-20 11:02:01.937 -06:00 [Information] Executing ObjectResult, writing value of type '"System.String"'.
+2021-01-20 11:02:01.973 -06:00 [Information] OnResultExecuted Controller: Users Action:Ping
+2021-01-20 11:02:01.979 -06:00 [Information] Executed action "Axity.Project.ServiceName.Api.Controllers.UsersController.Ping (Axity.Project.ServiceName.Api)" in 324.3771ms
+2021-01-20 11:02:01.980 -06:00 [Information] Executed endpoint '"Axity.Project.ServiceName.Api.Controllers.UsersController.Ping (Axity.Project.ServiceName.Api)"'
+2021-01-20 11:02:02.005 -06:00 [Information] Request finished in 530.9489ms 200 text/plain; charset=utf-8
+2021-01-20 11:02:02.962 -06:00 [Error] DoGetApplicationsAsync Failed, request was made to http://localhost:8761/eureka/apps/
+System.Net.Http.HttpRequestException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ ---> System.Net.Sockets.SocketException (10061): No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean allowHttp2, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DecompressionHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.DoGetApplicationsAsync(String path, ISet`1 regions)
+2021-01-20 11:02:02.964 -06:00 [Error] FetchRegistry Failed for Eureka service urls: "http://localhost:8761/eureka/"
+Steeltoe.Discovery.Eureka.Transport.EurekaTransportException: Cannot execute request on any known server
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.GetServiceUrl(IList`1 candidateServiceUrls, Int32& indx)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.DoGetApplicationsAsync(String path, ISet`1 regions)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.GetApplicationsAsync(ISet`1 regions)
+   at Steeltoe.Discovery.Eureka.DiscoveryClient.FetchFullRegistryAsync()
+   at Steeltoe.Discovery.Eureka.DiscoveryClient.FetchRegistryAsync(Boolean fullUpdate)
+2021-01-20 11:02:02.965 -06:00 [Error] CacheRefresh failed
+2021-01-20 11:02:28.876 -06:00 [Error] SendHeartBeatAsync Failed, request was made to http://localhost:8761/eureka/apps/USERSERVICE/userService?status=UP&lastDirtyTimestamp=1611162080329
+System.Net.Http.HttpRequestException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ ---> System.Net.Sockets.SocketException (10061): No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean allowHttp2, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DecompressionHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.SendHeartBeatAsyncInternal(String appName, String id, InstanceInfo info, InstanceStatus overriddenStatus)
+2021-01-20 11:02:28.882 -06:00 [Error] Renew Failed
+Steeltoe.Discovery.Eureka.Transport.EurekaTransportException: Cannot execute request on any known server
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.GetServiceUrl(IList`1 candidateServiceUrls, Int32& indx)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.SendHeartBeatAsyncInternal(String appName, String id, InstanceInfo info, InstanceStatus overriddenStatus)
+   at Steeltoe.Discovery.Eureka.DiscoveryClient.RenewAsync()
+2021-01-20 11:02:28.883 -06:00 [Error] HeartBeat failed
+2021-01-20 11:02:32.965 -06:00 [Error] DoGetApplicationsAsync Failed, request was made to http://localhost:8761/eureka/apps/
+System.Net.Http.HttpRequestException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ ---> System.Net.Sockets.SocketException (10061): No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean allowHttp2, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DecompressionHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.DoGetApplicationsAsync(String path, ISet`1 regions)
+2021-01-20 11:02:32.967 -06:00 [Error] FetchRegistry Failed for Eureka service urls: "http://localhost:8761/eureka/"
+Steeltoe.Discovery.Eureka.Transport.EurekaTransportException: Cannot execute request on any known server
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.GetServiceUrl(IList`1 candidateServiceUrls, Int32& indx)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.DoGetApplicationsAsync(String path, ISet`1 regions)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.GetApplicationsAsync(ISet`1 regions)
+   at Steeltoe.Discovery.Eureka.DiscoveryClient.FetchFullRegistryAsync()
+   at Steeltoe.Discovery.Eureka.DiscoveryClient.FetchRegistryAsync(Boolean fullUpdate)
+2021-01-20 11:02:32.968 -06:00 [Error] CacheRefresh failed
+2021-01-20 11:02:58.902 -06:00 [Error] SendHeartBeatAsync Failed, request was made to http://localhost:8761/eureka/apps/USERSERVICE/userService?status=UP&lastDirtyTimestamp=1611162080329
+System.Net.Http.HttpRequestException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ ---> System.Net.Sockets.SocketException (10061): No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean allowHttp2, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DecompressionHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.SendHeartBeatAsyncInternal(String appName, String id, InstanceInfo info, InstanceStatus overriddenStatus)
+2021-01-20 11:02:58.910 -06:00 [Error] Renew Failed
+Steeltoe.Discovery.Eureka.Transport.EurekaTransportException: Cannot execute request on any known server
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.GetServiceUrl(IList`1 candidateServiceUrls, Int32& indx)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.SendHeartBeatAsyncInternal(String appName, String id, InstanceInfo info, InstanceStatus overriddenStatus)
+   at Steeltoe.Discovery.Eureka.DiscoveryClient.RenewAsync()
+2021-01-20 11:02:58.913 -06:00 [Error] HeartBeat failed
+2021-01-20 11:03:02.958 -06:00 [Error] DoGetApplicationsAsync Failed, request was made to http://localhost:8761/eureka/apps/
+System.Net.Http.HttpRequestException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ ---> System.Net.Sockets.SocketException (10061): No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean allowHttp2, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DecompressionHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.DoGetApplicationsAsync(String path, ISet`1 regions)
+2021-01-20 11:03:02.960 -06:00 [Error] FetchRegistry Failed for Eureka service urls: "http://localhost:8761/eureka/"
+Steeltoe.Discovery.Eureka.Transport.EurekaTransportException: Cannot execute request on any known server
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.GetServiceUrl(IList`1 candidateServiceUrls, Int32& indx)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.DoGetApplicationsAsync(String path, ISet`1 regions)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.GetApplicationsAsync(ISet`1 regions)
+   at Steeltoe.Discovery.Eureka.DiscoveryClient.FetchFullRegistryAsync()
+   at Steeltoe.Discovery.Eureka.DiscoveryClient.FetchRegistryAsync(Boolean fullUpdate)
+2021-01-20 11:03:02.961 -06:00 [Error] CacheRefresh failed
+2021-01-20 11:03:28.901 -06:00 [Error] SendHeartBeatAsync Failed, request was made to http://localhost:8761/eureka/apps/USERSERVICE/userService?status=UP&lastDirtyTimestamp=1611162080329
+System.Net.Http.HttpRequestException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ ---> System.Net.Sockets.SocketException (10061): No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean allowHttp2, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DecompressionHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.SendHeartBeatAsyncInternal(String appName, String id, InstanceInfo info, InstanceStatus overriddenStatus)
+2021-01-20 11:03:28.902 -06:00 [Error] Renew Failed
+Steeltoe.Discovery.Eureka.Transport.EurekaTransportException: Cannot execute request on any known server
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.GetServiceUrl(IList`1 candidateServiceUrls, Int32& indx)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.SendHeartBeatAsyncInternal(String appName, String id, InstanceInfo info, InstanceStatus overriddenStatus)
+   at Steeltoe.Discovery.Eureka.DiscoveryClient.RenewAsync()
+2021-01-20 11:03:28.903 -06:00 [Error] HeartBeat failed
+2021-01-20 11:03:32.977 -06:00 [Error] DoGetApplicationsAsync Failed, request was made to http://localhost:8761/eureka/apps/
+System.Net.Http.HttpRequestException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ ---> System.Net.Sockets.SocketException (10061): No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean allowHttp2, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DecompressionHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.DoGetApplicationsAsync(String path, ISet`1 regions)
+2021-01-20 11:03:32.980 -06:00 [Error] FetchRegistry Failed for Eureka service urls: "http://localhost:8761/eureka/"
+Steeltoe.Discovery.Eureka.Transport.EurekaTransportException: Cannot execute request on any known server
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.GetServiceUrl(IList`1 candidateServiceUrls, Int32& indx)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.DoGetApplicationsAsync(String path, ISet`1 regions)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.GetApplicationsAsync(ISet`1 regions)
+   at Steeltoe.Discovery.Eureka.DiscoveryClient.FetchFullRegistryAsync()
+   at Steeltoe.Discovery.Eureka.DiscoveryClient.FetchRegistryAsync(Boolean fullUpdate)
+2021-01-20 11:03:32.982 -06:00 [Error] CacheRefresh failed
+2021-01-20 11:03:58.889 -06:00 [Error] SendHeartBeatAsync Failed, request was made to http://localhost:8761/eureka/apps/USERSERVICE/userService?status=UP&lastDirtyTimestamp=1611162080329
+System.Net.Http.HttpRequestException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ ---> System.Net.Sockets.SocketException (10061): No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean allowHttp2, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DecompressionHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.SendHeartBeatAsyncInternal(String appName, String id, InstanceInfo info, InstanceStatus overriddenStatus)
+2021-01-20 11:03:58.891 -06:00 [Error] Renew Failed
+Steeltoe.Discovery.Eureka.Transport.EurekaTransportException: Cannot execute request on any known server
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.GetServiceUrl(IList`1 candidateServiceUrls, Int32& indx)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.SendHeartBeatAsyncInternal(String appName, String id, InstanceInfo info, InstanceStatus overriddenStatus)
+   at Steeltoe.Discovery.Eureka.DiscoveryClient.RenewAsync()
+2021-01-20 11:03:58.891 -06:00 [Error] HeartBeat failed
+2021-01-20 11:04:02.982 -06:00 [Error] DoGetApplicationsAsync Failed, request was made to http://localhost:8761/eureka/apps/
+System.Net.Http.HttpRequestException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ ---> System.Net.Sockets.SocketException (10061): No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean allowHttp2, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DecompressionHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.DoGetApplicationsAsync(String path, ISet`1 regions)
+2021-01-20 11:04:02.985 -06:00 [Error] FetchRegistry Failed for Eureka service urls: "http://localhost:8761/eureka/"
+Steeltoe.Discovery.Eureka.Transport.EurekaTransportException: Cannot execute request on any known server
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.GetServiceUrl(IList`1 candidateServiceUrls, Int32& indx)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.DoGetApplicationsAsync(String path, ISet`1 regions)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.GetApplicationsAsync(ISet`1 regions)
+   at Steeltoe.Discovery.Eureka.DiscoveryClient.FetchFullRegistryAsync()
+   at Steeltoe.Discovery.Eureka.DiscoveryClient.FetchRegistryAsync(Boolean fullUpdate)
+2021-01-20 11:04:02.985 -06:00 [Error] CacheRefresh failed
+2021-01-20 11:04:22.196 -06:00 [Error] RegisterAsync Failed, request was made to http://localhost:8761/eureka/apps/USERSERVICE, retry: 0
+System.Net.Http.HttpRequestException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ ---> System.Net.Sockets.SocketException (10061): No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean allowHttp2, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DecompressionHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.RegisterAsyncInternal(InstanceInfo info)
+2021-01-20 11:04:22.198 -06:00 [Error] CancelAsync Failed, request was made to http://localhost:8761/eureka/apps/USERSERVICE/userService
+System.Net.Http.HttpRequestException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ ---> System.Net.Sockets.SocketException (10061): No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean allowHttp2, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DecompressionHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.CancelAsyncInternal(String appName, String id)
+2021-01-20 11:04:22.198 -06:00 [Error] Register Failed
+Steeltoe.Discovery.Eureka.Transport.EurekaTransportException: Cannot execute request on any known server
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.GetServiceUrl(IList`1 candidateServiceUrls, Int32& indx)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.RegisterAsyncInternal(InstanceInfo info)
+   at Steeltoe.Discovery.Eureka.DiscoveryClient.RegisterAsync()
+2021-01-20 11:04:22.198 -06:00 [Error] Unregister Failed
+Steeltoe.Discovery.Eureka.Transport.EurekaTransportException: Cannot execute request on any known server
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.GetServiceUrl(IList`1 candidateServiceUrls, Int32& indx)
+   at Steeltoe.Discovery.Eureka.Transport.EurekaHttpClient.CancelAsyncInternal(String appName, String id)
+   at Steeltoe.Discovery.Eureka.DiscoveryClient.UnregisterAsync()
+2021-01-20 11:04:22.199 -06:00 [Warning] Unregister failed during Shutdown

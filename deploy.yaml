@@ -1,0 +1,301 @@
+---
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: netcore
+  name: netcore 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: netcore
+  template:
+    metadata:
+      labels:
+        app: netcore 
+    spec:
+      containers:
+      - name: netcore
+        image: 107004909/ejemplo-netcore:latest
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: 200m
+            memory: 256Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+        env:
+        - name: TZ
+          value: America/Mexico_City
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Development
+        ports:
+        - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: netcore
+  name: netcore
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 30000
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: netcore
+---
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: netcore
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: netcore
+  minReplicas: 1
+  maxReplicas: 3
+  metrics: 
+  - type: Resource 
+    resource: 
+      name: cpu 
+      target:
+        type: Utilization
+        averageUtilization: 70
+  - type: Resource 
+    resource: 
+      name: memory
+      target:
+        type: Utilization
+        averageValue: 200Mi
+---
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nodejs
+  name: nodejs 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodejs
+  template:
+    metadata:
+      labels:
+        app: nodejs 
+    spec:
+      containers:
+      - name: nodejs
+        image: 107004909/ejemplo-nodejs:latest
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: 200m
+            memory: 256Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+        env:
+        - name: TZ
+          value: America/Mexico_City
+        - name: NODE_ENV
+          value: development
+        ports:
+        - containerPort: 9100
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: nodejs
+  name: nodejs
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 9100
+    protocol: TCP
+    targetPort: 9100
+  selector:
+    app: nodejs
+---
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: nodejs
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: nodejs
+  minReplicas: 1
+  maxReplicas: 3
+  metrics: 
+  - type: Resource 
+    resource: 
+      name: cpu 
+      target:
+        type: Utilization
+        averageUtilization: 70
+  - type: Resource 
+    resource: 
+      name: memory
+      target:
+        type: Utilization
+        averageValue: 200Mi
+---
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: springapp
+  name: springapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springapp
+  template:
+    metadata:
+      labels:
+        app: springapp 
+    spec:
+      containers:
+      - name: springapp
+        image: 107004909/springapp:latest
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: 200m
+            memory: 256Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+        env:
+        - name: TZ
+          value: America/Mexico_City
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Development
+        ports:
+        - containerPort: 8099
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: springapp
+  name: springapp
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8099
+    protocol: TCP
+    targetPort: 8099
+  selector:
+    app: springapp
+---
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: springapp
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: springapp
+  minReplicas: 1
+  maxReplicas: 3
+  metrics: 
+  - type: Resource 
+    resource: 
+      name: cpu 
+      target:
+        type: Utilization
+        averageUtilization: 70
+  - type: Resource 
+    resource: 
+      name: memory
+      target:
+        type: Utilization
+        averageValue: 200Mi
+---
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: db4springapp
+  name: db4springapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db4springapp
+  template:
+    metadata:
+      labels:
+        app: db4springapp 
+    spec:
+      containers:
+      - name: db4springapp
+        image: 107004909/db4springapp:latest
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 512Mi
+          requests:
+            cpu: 100m
+            memory: 256Mi
+        env:
+        - name: TZ
+          value: America/Mexico_City
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Development
+        ports:
+        - containerPort: 3306
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: db4springapp
+spec:
+  type: NodePort
+  selector:
+    app: db4springapp
+  ports:
+    - port: 3306
+      targetPort: 30340
+      nodePort: 30099
+
+---
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: db4springapp
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: db4springapp
+  minReplicas: 1
+  maxReplicas: 3
+  metrics: 
+  - type: Resource 
+    resource: 
+      name: cpu 
+      target:
+        type: Utilization
+        averageUtilization: 70
+  - type: Resource 
+    resource: 
+      name: memory
+      target:
+        type: Utilization
+        averageValue: 200Mi
+---
+
